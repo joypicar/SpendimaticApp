@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		380524921DE974AA003F95B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524911DE974AA003F95B5 /* main.m */; };
+		380524951DE974AA003F95B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524941DE974AA003F95B5 /* AppDelegate.m */; };
+		380524981DE974AA003F95B5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524971DE974AA003F95B5 /* ViewController.m */; };
+		3805249B1DE974AA003F95B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380524991DE974AA003F95B5 /* Main.storyboard */; };
+		3805249D1DE974AA003F95B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3805249C1DE974AA003F95B5 /* Assets.xcassets */; };
+		380524A01DE974AA003F95B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3805249E1DE974AA003F95B5 /* LaunchScreen.storyboard */; };
+		380524AB1DE974AA003F95B5 /* spendimaticTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524AA1DE974AA003F95B5 /* spendimaticTests.m */; };
+		380524B61DE974AA003F95B5 /* spendimaticUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524B51DE974AA003F95B5 /* spendimaticUITests.m */; };
+		380524CA1DE9757E003F95B5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524C71DE9757E003F95B5 /* MainViewController.m */; };
+		380524CB1DE9757E003F95B5 /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524C91DE9757E003F95B5 /* ScannerViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		380524A71DE974AA003F95B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 380524851DE974AA003F95B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3805248C1DE974AA003F95B5;
+			remoteInfo = spendimatic;
+		};
+		380524B21DE974AA003F95B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 380524851DE974AA003F95B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3805248C1DE974AA003F95B5;
+			remoteInfo = spendimatic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3805248D1DE974AA003F95B5 /* spendimatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spendimatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		380524911DE974AA003F95B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		380524931DE974AA003F95B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		380524941DE974AA003F95B5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		380524961DE974AA003F95B5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		380524971DE974AA003F95B5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3805249A1DE974AA003F95B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3805249C1DE974AA003F95B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3805249F1DE974AA003F95B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		380524A11DE974AA003F95B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		380524A61DE974AA003F95B5 /* spendimaticTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spendimaticTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		380524AA1DE974AA003F95B5 /* spendimaticTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spendimaticTests.m; sourceTree = "<group>"; };
+		380524AC1DE974AA003F95B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		380524B11DE974AA003F95B5 /* spendimaticUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spendimaticUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		380524B51DE974AA003F95B5 /* spendimaticUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spendimaticUITests.m; sourceTree = "<group>"; };
+		380524B71DE974AA003F95B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		380524C61DE9757E003F95B5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ViewControllers/MainViewController.h; sourceTree = "<group>"; };
+		380524C71DE9757E003F95B5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewControllers/MainViewController.m; sourceTree = "<group>"; };
+		380524C81DE9757E003F95B5 /* ScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScannerViewController.h; path = ViewControllers/ScannerViewController.h; sourceTree = "<group>"; };
+		380524C91DE9757E003F95B5 /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScannerViewController.m; path = ViewControllers/ScannerViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3805248A1DE974AA003F95B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380524A31DE974AA003F95B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380524AE1DE974AA003F95B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		380524841DE974AA003F95B5 = {
+			isa = PBXGroup;
+			children = (
+				3805248F1DE974AA003F95B5 /* spendimatic */,
+				380524A91DE974AA003F95B5 /* spendimaticTests */,
+				380524B41DE974AA003F95B5 /* spendimaticUITests */,
+				3805248E1DE974AA003F95B5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3805248E1DE974AA003F95B5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3805248D1DE974AA003F95B5 /* spendimatic.app */,
+				380524A61DE974AA003F95B5 /* spendimaticTests.xctest */,
+				380524B11DE974AA003F95B5 /* spendimaticUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3805248F1DE974AA003F95B5 /* spendimatic */ = {
+			isa = PBXGroup;
+			children = (
+				380524C51DE97512003F95B5 /* Model */,
+				380524C41DE974C1003F95B5 /* ViewControllers */,
+				380524C31DE974B9003F95B5 /* AppSettings */,
+				380524961DE974AA003F95B5 /* ViewController.h */,
+				380524971DE974AA003F95B5 /* ViewController.m */,
+				380524901DE974AA003F95B5 /* Supporting Files */,
+			);
+			path = spendimatic;
+			sourceTree = "<group>";
+		};
+		380524901DE974AA003F95B5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				380524911DE974AA003F95B5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		380524A91DE974AA003F95B5 /* spendimaticTests */ = {
+			isa = PBXGroup;
+			children = (
+				380524AA1DE974AA003F95B5 /* spendimaticTests.m */,
+				380524AC1DE974AA003F95B5 /* Info.plist */,
+			);
+			path = spendimaticTests;
+			sourceTree = "<group>";
+		};
+		380524B41DE974AA003F95B5 /* spendimaticUITests */ = {
+			isa = PBXGroup;
+			children = (
+				380524B51DE974AA003F95B5 /* spendimaticUITests.m */,
+				380524B71DE974AA003F95B5 /* Info.plist */,
+			);
+			path = spendimaticUITests;
+			sourceTree = "<group>";
+		};
+		380524C31DE974B9003F95B5 /* AppSettings */ = {
+			isa = PBXGroup;
+			children = (
+				380524931DE974AA003F95B5 /* AppDelegate.h */,
+				380524941DE974AA003F95B5 /* AppDelegate.m */,
+				380524991DE974AA003F95B5 /* Main.storyboard */,
+				3805249C1DE974AA003F95B5 /* Assets.xcassets */,
+				3805249E1DE974AA003F95B5 /* LaunchScreen.storyboard */,
+				380524A11DE974AA003F95B5 /* Info.plist */,
+			);
+			name = AppSettings;
+			sourceTree = "<group>";
+		};
+		380524C41DE974C1003F95B5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				380524C61DE9757E003F95B5 /* MainViewController.h */,
+				380524C71DE9757E003F95B5 /* MainViewController.m */,
+				380524C81DE9757E003F95B5 /* ScannerViewController.h */,
+				380524C91DE9757E003F95B5 /* ScannerViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		380524C51DE97512003F95B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3805248C1DE974AA003F95B5 /* spendimatic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 380524BA1DE974AA003F95B5 /* Build configuration list for PBXNativeTarget "spendimatic" */;
+			buildPhases = (
+				380524891DE974AA003F95B5 /* Sources */,
+				3805248A1DE974AA003F95B5 /* Frameworks */,
+				3805248B1DE974AA003F95B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = spendimatic;
+			productName = spendimatic;
+			productReference = 3805248D1DE974AA003F95B5 /* spendimatic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		380524A51DE974AA003F95B5 /* spendimaticTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 380524BD1DE974AA003F95B5 /* Build configuration list for PBXNativeTarget "spendimaticTests" */;
+			buildPhases = (
+				380524A21DE974AA003F95B5 /* Sources */,
+				380524A31DE974AA003F95B5 /* Frameworks */,
+				380524A41DE974AA003F95B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				380524A81DE974AA003F95B5 /* PBXTargetDependency */,
+			);
+			name = spendimaticTests;
+			productName = spendimaticTests;
+			productReference = 380524A61DE974AA003F95B5 /* spendimaticTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		380524B01DE974AA003F95B5 /* spendimaticUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 380524C01DE974AA003F95B5 /* Build configuration list for PBXNativeTarget "spendimaticUITests" */;
+			buildPhases = (
+				380524AD1DE974AA003F95B5 /* Sources */,
+				380524AE1DE974AA003F95B5 /* Frameworks */,
+				380524AF1DE974AA003F95B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				380524B31DE974AA003F95B5 /* PBXTargetDependency */,
+			);
+			name = spendimaticUITests;
+			productName = spendimaticUITests;
+			productReference = 380524B11DE974AA003F95B5 /* spendimaticUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		380524851DE974AA003F95B5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "LF-Mac-Air";
+				TargetAttributes = {
+					3805248C1DE974AA003F95B5 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 94U98JVHRT;
+						ProvisioningStyle = Automatic;
+					};
+					380524A51DE974AA003F95B5 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3805248C1DE974AA003F95B5;
+					};
+					380524B01DE974AA003F95B5 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3805248C1DE974AA003F95B5;
+					};
+				};
+			};
+			buildConfigurationList = 380524881DE974AA003F95B5 /* Build configuration list for PBXProject "spendimatic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 380524841DE974AA003F95B5;
+			productRefGroup = 3805248E1DE974AA003F95B5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3805248C1DE974AA003F95B5 /* spendimatic */,
+				380524A51DE974AA003F95B5 /* spendimaticTests */,
+				380524B01DE974AA003F95B5 /* spendimaticUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3805248B1DE974AA003F95B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380524A01DE974AA003F95B5 /* LaunchScreen.storyboard in Resources */,
+				3805249D1DE974AA003F95B5 /* Assets.xcassets in Resources */,
+				3805249B1DE974AA003F95B5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380524A41DE974AA003F95B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380524AF1DE974AA003F95B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		380524891DE974AA003F95B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380524981DE974AA003F95B5 /* ViewController.m in Sources */,
+				380524951DE974AA003F95B5 /* AppDelegate.m in Sources */,
+				380524921DE974AA003F95B5 /* main.m in Sources */,
+				380524CA1DE9757E003F95B5 /* MainViewController.m in Sources */,
+				380524CB1DE9757E003F95B5 /* ScannerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380524A21DE974AA003F95B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380524AB1DE974AA003F95B5 /* spendimaticTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380524AD1DE974AA003F95B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380524B61DE974AA003F95B5 /* spendimaticUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		380524A81DE974AA003F95B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3805248C1DE974AA003F95B5 /* spendimatic */;
+			targetProxy = 380524A71DE974AA003F95B5 /* PBXContainerItemProxy */;
+		};
+		380524B31DE974AA003F95B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3805248C1DE974AA003F95B5 /* spendimatic */;
+			targetProxy = 380524B21DE974AA003F95B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		380524991DE974AA003F95B5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3805249A1DE974AA003F95B5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3805249E1DE974AA003F95B5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3805249F1DE974AA003F95B5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		380524B81DE974AA003F95B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		380524B91DE974AA003F95B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		380524BB1DE974AA003F95B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 94U98JVHRT;
+				INFOPLIST_FILE = spendimatic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.livefitter.spendimatic-uhac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		380524BC1DE974AA003F95B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 94U98JVHRT;
+				INFOPLIST_FILE = spendimatic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.livefitter.spendimatic-uhac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		380524BE1DE974AA003F95B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = spendimaticTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.livefitter.spendimaticTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/spendimatic.app/spendimatic";
+			};
+			name = Debug;
+		};
+		380524BF1DE974AA003F95B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = spendimaticTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.livefitter.spendimaticTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/spendimatic.app/spendimatic";
+			};
+			name = Release;
+		};
+		380524C11DE974AA003F95B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = spendimaticUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.livefitter.spendimaticUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = spendimatic;
+			};
+			name = Debug;
+		};
+		380524C21DE974AA003F95B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = spendimaticUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.livefitter.spendimaticUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = spendimatic;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		380524881DE974AA003F95B5 /* Build configuration list for PBXProject "spendimatic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380524B81DE974AA003F95B5 /* Debug */,
+				380524B91DE974AA003F95B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		380524BA1DE974AA003F95B5 /* Build configuration list for PBXNativeTarget "spendimatic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380524BB1DE974AA003F95B5 /* Debug */,
+				380524BC1DE974AA003F95B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		380524BD1DE974AA003F95B5 /* Build configuration list for PBXNativeTarget "spendimaticTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380524BE1DE974AA003F95B5 /* Debug */,
+				380524BF1DE974AA003F95B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		380524C01DE974AA003F95B5 /* Build configuration list for PBXNativeTarget "spendimaticUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380524C11DE974AA003F95B5 /* Debug */,
+				380524C21DE974AA003F95B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 380524851DE974AA003F95B5 /* Project object */;
+}
