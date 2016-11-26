@@ -17,6 +17,8 @@
 		380524B61DE974AA003F95B5 /* spendimaticUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524B51DE974AA003F95B5 /* spendimaticUITests.m */; };
 		380524CA1DE9757E003F95B5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524C71DE9757E003F95B5 /* MainViewController.m */; };
 		380524CB1DE9757E003F95B5 /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524C91DE9757E003F95B5 /* ScannerViewController.m */; };
+		380524CE1DE98666003F95B5 /* PlaceOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524CD1DE98666003F95B5 /* PlaceOrderViewController.m */; };
+		380524D51DE996A4003F95B5 /* Burger.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524D41DE996A4003F95B5 /* Burger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		380524C71DE9757E003F95B5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewControllers/MainViewController.m; sourceTree = "<group>"; };
 		380524C81DE9757E003F95B5 /* ScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScannerViewController.h; path = ViewControllers/ScannerViewController.h; sourceTree = "<group>"; };
 		380524C91DE9757E003F95B5 /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScannerViewController.m; path = ViewControllers/ScannerViewController.m; sourceTree = "<group>"; };
+		380524CC1DE98666003F95B5 /* PlaceOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOrderViewController.h; sourceTree = "<group>"; };
+		380524CD1DE98666003F95B5 /* PlaceOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOrderViewController.m; sourceTree = "<group>"; };
+		380524D31DE996A4003F95B5 /* Burger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Burger.h; path = Subview/Burger.h; sourceTree = "<group>"; };
+		380524D41DE996A4003F95B5 /* Burger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Burger.m; path = Subview/Burger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,10 +165,13 @@
 		380524C41DE974C1003F95B5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				380524CF1DE9955E003F95B5 /* Subview */,
 				380524C61DE9757E003F95B5 /* MainViewController.h */,
 				380524C71DE9757E003F95B5 /* MainViewController.m */,
 				380524C81DE9757E003F95B5 /* ScannerViewController.h */,
 				380524C91DE9757E003F95B5 /* ScannerViewController.m */,
+				380524CC1DE98666003F95B5 /* PlaceOrderViewController.h */,
+				380524CD1DE98666003F95B5 /* PlaceOrderViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -172,6 +181,15 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		380524CF1DE9955E003F95B5 /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				380524D31DE996A4003F95B5 /* Burger.h */,
+				380524D41DE996A4003F95B5 /* Burger.m */,
+			);
+			name = Subview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +329,8 @@
 				380524981DE974AA003F95B5 /* ViewController.m in Sources */,
 				380524951DE974AA003F95B5 /* AppDelegate.m in Sources */,
 				380524921DE974AA003F95B5 /* main.m in Sources */,
+				380524CE1DE98666003F95B5 /* PlaceOrderViewController.m in Sources */,
+				380524D51DE996A4003F95B5 /* Burger.m in Sources */,
 				380524CA1DE9757E003F95B5 /* MainViewController.m in Sources */,
 				380524CB1DE9757E003F95B5 /* ScannerViewController.m in Sources */,
 			);
