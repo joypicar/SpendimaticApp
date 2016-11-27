@@ -20,8 +20,14 @@
     // Override point for customization after application launch.
     
     MainViewController *mainVC = [[MainViewController alloc] init];
+    
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     nav.navigationBarHidden = NO;
+    
+    [nav.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    nav.navigationBar.shadowImage = [UIImage new];
+    nav.navigationBar.translucent = YES;
+    
     [_window setRootViewController:nav];
     [_window makeKeyAndVisible];
     

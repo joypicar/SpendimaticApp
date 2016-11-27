@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380122481DEA962800259206 /* OrderNoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380122471DEA962800259206 /* OrderNoViewController.m */; };
 		380524921DE974AA003F95B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524911DE974AA003F95B5 /* main.m */; };
 		380524951DE974AA003F95B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524941DE974AA003F95B5 /* AppDelegate.m */; };
 		380524981DE974AA003F95B5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524971DE974AA003F95B5 /* ViewController.m */; };
@@ -18,7 +19,15 @@
 		380524CA1DE9757E003F95B5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524C71DE9757E003F95B5 /* MainViewController.m */; };
 		380524CB1DE9757E003F95B5 /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524C91DE9757E003F95B5 /* ScannerViewController.m */; };
 		380524CE1DE98666003F95B5 /* PlaceOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524CD1DE98666003F95B5 /* PlaceOrderViewController.m */; };
-		380524D51DE996A4003F95B5 /* Burger.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524D41DE996A4003F95B5 /* Burger.m */; };
+		380524D81DEA0CE5003F95B5 /* ItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524D71DEA0CE5003F95B5 /* ItemList.m */; };
+		380524DC1DEA18A5003F95B5 /* cUIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524DB1DEA18A5003F95B5 /* cUIScrollView.m */; };
+		380524E41DEA70BE003F95B5 /* burger_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 380524DE1DEA70BD003F95B5 /* burger_01.png */; };
+		380524E51DEA70BE003F95B5 /* burger_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 380524DF1DEA70BD003F95B5 /* burger_02.png */; };
+		380524E61DEA70BE003F95B5 /* burger_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 380524E01DEA70BD003F95B5 /* burger_03.png */; };
+		380524E71DEA70BE003F95B5 /* burger_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 380524E11DEA70BD003F95B5 /* burger_04.png */; };
+		380524E81DEA70BE003F95B5 /* logo_McDo.png in Resources */ = {isa = PBXBuildFile; fileRef = 380524E21DEA70BD003F95B5 /* logo_McDo.png */; };
+		380524E91DEA70BE003F95B5 /* logo_spendimatic.png in Resources */ = {isa = PBXBuildFile; fileRef = 380524E31DEA70BD003F95B5 /* logo_spendimatic.png */; };
+		380524EC1DEA714E003F95B5 /* Products.m in Sources */ = {isa = PBXBuildFile; fileRef = 380524EB1DEA714E003F95B5 /* Products.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		380122461DEA962800259206 /* OrderNoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderNoViewController.h; path = ViewControllers/OrderNoViewController.h; sourceTree = "<group>"; };
+		380122471DEA962800259206 /* OrderNoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderNoViewController.m; path = ViewControllers/OrderNoViewController.m; sourceTree = "<group>"; };
 		3805248D1DE974AA003F95B5 /* spendimatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spendimatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		380524911DE974AA003F95B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		380524931DE974AA003F95B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,8 +72,18 @@
 		380524C91DE9757E003F95B5 /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScannerViewController.m; path = ViewControllers/ScannerViewController.m; sourceTree = "<group>"; };
 		380524CC1DE98666003F95B5 /* PlaceOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOrderViewController.h; sourceTree = "<group>"; };
 		380524CD1DE98666003F95B5 /* PlaceOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOrderViewController.m; sourceTree = "<group>"; };
-		380524D31DE996A4003F95B5 /* Burger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Burger.h; path = Subview/Burger.h; sourceTree = "<group>"; };
-		380524D41DE996A4003F95B5 /* Burger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Burger.m; path = Subview/Burger.m; sourceTree = "<group>"; };
+		380524D61DEA0CE5003F95B5 /* ItemList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemList.h; path = Subview/ItemList.h; sourceTree = "<group>"; };
+		380524D71DEA0CE5003F95B5 /* ItemList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemList.m; path = Subview/ItemList.m; sourceTree = "<group>"; };
+		380524DA1DEA18A5003F95B5 /* cUIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cUIScrollView.h; path = Tools/cUIScrollView.h; sourceTree = "<group>"; };
+		380524DB1DEA18A5003F95B5 /* cUIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cUIScrollView.m; path = Tools/cUIScrollView.m; sourceTree = "<group>"; };
+		380524DE1DEA70BD003F95B5 /* burger_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burger_01.png; path = Images/burger_01.png; sourceTree = "<group>"; };
+		380524DF1DEA70BD003F95B5 /* burger_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burger_02.png; path = Images/burger_02.png; sourceTree = "<group>"; };
+		380524E01DEA70BD003F95B5 /* burger_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burger_03.png; path = Images/burger_03.png; sourceTree = "<group>"; };
+		380524E11DEA70BD003F95B5 /* burger_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burger_04.png; path = Images/burger_04.png; sourceTree = "<group>"; };
+		380524E21DEA70BD003F95B5 /* logo_McDo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_McDo.png; path = Images/logo_McDo.png; sourceTree = "<group>"; };
+		380524E31DEA70BD003F95B5 /* logo_spendimatic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_spendimatic.png; path = Images/logo_spendimatic.png; sourceTree = "<group>"; };
+		380524EA1DEA714E003F95B5 /* Products.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Products.h; path = Models/Products.h; sourceTree = "<group>"; };
+		380524EB1DEA714E003F95B5 /* Products.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Products.m; path = Models/Products.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +134,8 @@
 		3805248F1DE974AA003F95B5 /* spendimatic */ = {
 			isa = PBXGroup;
 			children = (
+				380524DD1DEA7063003F95B5 /* Images */,
+				380524D91DEA1899003F95B5 /* Tools */,
 				380524C51DE97512003F95B5 /* Model */,
 				380524C41DE974C1003F95B5 /* ViewControllers */,
 				380524C31DE974B9003F95B5 /* AppSettings */,
@@ -172,6 +195,8 @@
 				380524C91DE9757E003F95B5 /* ScannerViewController.m */,
 				380524CC1DE98666003F95B5 /* PlaceOrderViewController.h */,
 				380524CD1DE98666003F95B5 /* PlaceOrderViewController.m */,
+				380122461DEA962800259206 /* OrderNoViewController.h */,
+				380122471DEA962800259206 /* OrderNoViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -179,6 +204,8 @@
 		380524C51DE97512003F95B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				380524EA1DEA714E003F95B5 /* Products.h */,
+				380524EB1DEA714E003F95B5 /* Products.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -186,10 +213,32 @@
 		380524CF1DE9955E003F95B5 /* Subview */ = {
 			isa = PBXGroup;
 			children = (
-				380524D31DE996A4003F95B5 /* Burger.h */,
-				380524D41DE996A4003F95B5 /* Burger.m */,
+				380524D61DEA0CE5003F95B5 /* ItemList.h */,
+				380524D71DEA0CE5003F95B5 /* ItemList.m */,
 			);
 			name = Subview;
+			sourceTree = "<group>";
+		};
+		380524D91DEA1899003F95B5 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				380524DA1DEA18A5003F95B5 /* cUIScrollView.h */,
+				380524DB1DEA18A5003F95B5 /* cUIScrollView.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		380524DD1DEA7063003F95B5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				380524DE1DEA70BD003F95B5 /* burger_01.png */,
+				380524DF1DEA70BD003F95B5 /* burger_02.png */,
+				380524E01DEA70BD003F95B5 /* burger_03.png */,
+				380524E11DEA70BD003F95B5 /* burger_04.png */,
+				380524E21DEA70BD003F95B5 /* logo_McDo.png */,
+				380524E31DEA70BD003F95B5 /* logo_spendimatic.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,8 +349,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				380524A01DE974AA003F95B5 /* LaunchScreen.storyboard in Resources */,
+				380524E61DEA70BE003F95B5 /* burger_03.png in Resources */,
+				380524E51DEA70BE003F95B5 /* burger_02.png in Resources */,
+				380524E81DEA70BE003F95B5 /* logo_McDo.png in Resources */,
+				380524E71DEA70BE003F95B5 /* burger_04.png in Resources */,
+				380524E91DEA70BE003F95B5 /* logo_spendimatic.png in Resources */,
 				3805249D1DE974AA003F95B5 /* Assets.xcassets in Resources */,
 				3805249B1DE974AA003F95B5 /* Main.storyboard in Resources */,
+				380524E41DEA70BE003F95B5 /* burger_01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,12 +381,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				380524D81DEA0CE5003F95B5 /* ItemList.m in Sources */,
 				380524981DE974AA003F95B5 /* ViewController.m in Sources */,
 				380524951DE974AA003F95B5 /* AppDelegate.m in Sources */,
 				380524921DE974AA003F95B5 /* main.m in Sources */,
 				380524CE1DE98666003F95B5 /* PlaceOrderViewController.m in Sources */,
-				380524D51DE996A4003F95B5 /* Burger.m in Sources */,
+				380524DC1DEA18A5003F95B5 /* cUIScrollView.m in Sources */,
+				380524EC1DEA714E003F95B5 /* Products.m in Sources */,
 				380524CA1DE9757E003F95B5 /* MainViewController.m in Sources */,
+				380122481DEA962800259206 /* OrderNoViewController.m in Sources */,
 				380524CB1DE9757E003F95B5 /* ScannerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livefitter.spendimatic-uhac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -498,6 +557,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livefitter.spendimatic-uhac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -566,6 +626,7 @@
 				380524BC1DE974AA003F95B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		380524BD1DE974AA003F95B5 /* Build configuration list for PBXNativeTarget "spendimaticTests" */ = {
 			isa = XCConfigurationList;
@@ -574,6 +635,7 @@
 				380524BF1DE974AA003F95B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		380524C01DE974AA003F95B5 /* Build configuration list for PBXNativeTarget "spendimaticUITests" */ = {
 			isa = XCConfigurationList;
@@ -582,6 +644,7 @@
 				380524C21DE974AA003F95B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,8 +7,9 @@
 //
 
 #import "ScannerViewController.h"
+#import "OrderNoViewController.h"
 
-@interface ScannerViewController () <AVCaptureMetadataOutputObjectsDelegate, UIScrollViewDelegate>
+@interface ScannerViewController () <AVCaptureMetadataOutputObjectsDelegate, UIScrollViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic) float screenWidth;
 @property (nonatomic) float screenHeight;
@@ -26,15 +27,21 @@
 @property (nonatomic, strong) UIView *failedFlashView;
 @property (strong, nonatomic) UILabel *scanningStatusLabel;
 
-@property (nonatomic, strong) UIScrollView *dataLogsScrollView;
+@property (nonatomic, strong) UIView *bannerView;
+@property (nonatomic, strong) UIView *tabMenuView;
+@property (nonatomic, strong) UIView *lowerPanelView;
+
+//@property (nonatomic, strong) UIScrollView *dataLogsScrollView;
+@property (nonatomic, strong) UIScrollView *orderLogsScrollView;
 
 @property (nonatomic) BOOL isReading;
 @property (nonatomic) BOOL pauseInterval;
 @property (nonatomic, strong) NSTimer *pauseTimer;
 
-@property (nonatomic, strong) NSMutableArray *dataLogsMutableArray;
-
 @property (nonatomic, strong) NSString *qrCodeId;
+
+@property (nonatomic, strong) UILabel *totalLabel;
+@property (nonatomic) NSInteger orderNo;
 
 @end
 
@@ -67,7 +74,7 @@
     
     _captureSession = nil;
     
-    _qrCodeId = @"";
+    _qrCodeId = @"Unionbank";
 }
 
 -(void)initScannerLayout{
@@ -76,72 +83,96 @@
     _cameraContainerView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_cameraContainerView];
     
-    // To be remove
-    /*
-    UIView *scanTopBarView = [[UIView alloc] initWithFrame:CGRectMake(0, _screenYOffSet, _screenWidth, _screenYOffSet - 20)];
-    scanTopBarView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-    [self.view addSubview:scanTopBarView];
-    
-    UILabel *minusLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 18, 10)];
-    //minusLabel.backgroundColor = [UIColor greenColor];
-    minusLabel.text = @"-";
-    minusLabel.textAlignment = NSTextAlignmentCenter;
-    minusLabel.font = [UIFont systemFontOfSize:30];
-    minusLabel.textColor = [UIColor whiteColor];
-    [minusLabel sizeToFit];
-    [scanTopBarView addSubview:minusLabel];
-    
-    CGRect frame = CGRectMake(minusLabel.frame.origin.x + minusLabel.frame.size.width + 5, minusLabel.frame.origin.y + (minusLabel.frame.size.height / 2), scanTopBarView.frame.size.width - 140, 10.0);
-    UISlider *slider = [[UISlider alloc] initWithFrame:frame];
-    //[slider setBackgroundColor:[[UIColor redColor] colorWithAlphaComponent:0.5]];
-    slider.minimumValue = 0.0;
-    slider.maximumValue = 1.0;
-    slider.continuous = YES;
-    slider.value = 0.0;
-    [slider setThumbImage:[UIImage imageNamed:@"slider-thumb"] forState:UIControlStateNormal];
-    [scanTopBarView addSubview:slider];
-    
-    [slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
-    
-    UILabel *plusLabel = [[UILabel alloc] initWithFrame:CGRectMake(slider.frame.origin.x + slider.frame.size.width + 5, 0, 18, 10)];
-    //plusLabel.backgroundColor = [UIColor greenColor];
-    plusLabel.text = @"+";
-    plusLabel.font = [UIFont systemFontOfSize:30];
-    plusLabel.textColor = [UIColor whiteColor];
-    [plusLabel sizeToFit];
-    [scanTopBarView addSubview:plusLabel];
-    */
-    
-    _dataLogsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _screenHeight - (_screenHeight / 4), _cameraContainerView.frame.size.width, _screenHeight / 4)];
-    _dataLogsScrollView.delegate = self;
-    _dataLogsScrollView.layer.cornerRadius = _cameraContainerView.layer.cornerRadius;
-    _dataLogsScrollView.contentSize = CGSizeMake(_dataLogsScrollView.frame.size.width, _dataLogsScrollView.frame.size.height * 2);
-    _dataLogsScrollView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-    [self.view addSubview:_dataLogsScrollView];
-    
-    _dataLogsMutableArray = [_prefs mutableArrayValueForKey:@"datalogs"];
-    
-    if(_dataLogsMutableArray.count == 0){
-        
-        _dataLogsMutableArray = [[NSMutableArray alloc] init];
-    }else{
-        
-        for (int i = 0; i < _dataLogsMutableArray.count; i++) {
-            
-            [self scanningLogs:[NSString stringWithFormat:@"%@",[_dataLogsMutableArray objectAtIndex:i]] row:i];
-        }
-    }
-    
-    NSLog(@"Load logs : -> %@", _dataLogsMutableArray);
+    NSLog(@"Load logs : -> %@", _orderLogsMutableArray);
     
     _scanningStatusLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, _cameraContainerView.frame.size.width, 20)];
     //_scanningStatusLabel.backgroundColor = [UIColor blackColor];
     _scanningStatusLabel.textColor = [UIColor greenColor];
     _scanningStatusLabel.font = [UIFont systemFontOfSize:12];
     
+    _bannerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _screenWidth, _screenHeight / 8)];
+    _bannerView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:_bannerView];
+    
+    _tabMenuView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _bannerView.frame.origin.y + _bannerView.frame.size.height, _screenWidth, 50)];
+    _tabMenuView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:_tabMenuView];
+    
+    UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_McDo"]];
+    //logoImageView.backgroundColor = [UIColor lightGrayColor];
+    logoImageView.frame = CGRectMake((_bannerView.frame.size.width / 2) - ((_bannerView.frame.size.height - 30) / 2), 20, _bannerView.frame.size.height - 30, _bannerView.frame.size.height - 30);
+    logoImageView.contentMode = UIViewContentModeScaleAspectFill;
+    logoImageView.clipsToBounds = YES;
+    [_bannerView addSubview:logoImageView];
+    
+    UIImageView *spendImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_spendimatic"]];
+    //logoImageView.backgroundColor = [UIColor lightGrayColor];
+    spendImageView.frame = CGRectMake((_tabMenuView.frame.size.width / 2) - 100, 0, 200, _tabMenuView.frame.size.height);
+    spendImageView.contentMode = UIViewContentModeScaleAspectFit;
+    spendImageView.clipsToBounds = YES;
+    [_tabMenuView addSubview:spendImageView];
+    
+    [self initLowerPanel];
+    
     [self startStopReading];
 }
 
+-(void)initLowerPanel{
+    
+    _lowerPanelView = [[UIView alloc] initWithFrame:CGRectMake(0, _screenHeight - 150, _screenWidth, 150)];
+    _lowerPanelView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:_lowerPanelView];
+    
+    UILabel *quantityLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 40)];
+    //quantityLabel.backgroundColor = [UIColor greenColor];
+    quantityLabel.text = @"QTY";
+    quantityLabel.textColor = [UIColor whiteColor];
+    quantityLabel.textAlignment = NSTextAlignmentCenter;
+    [_lowerPanelView addSubview:quantityLabel];
+    
+    UILabel *yourOrderLabel = [[UILabel alloc] initWithFrame:CGRectMake(quantityLabel.frame.size.width, 0, _screenWidth - (_screenWidth / 3), 40)];
+    //yourOrderLabel.backgroundColor = [UIColor orangeColor];
+    yourOrderLabel.text = @"Your Order";
+    yourOrderLabel.textColor = [UIColor whiteColor];
+    yourOrderLabel.textAlignment = NSTextAlignmentCenter;
+    [_lowerPanelView addSubview:yourOrderLabel];
+    
+    UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(yourOrderLabel.frame.origin.x + yourOrderLabel.frame.size.width, 0, 60, 40)];
+    //priceLabel.backgroundColor = [UIColor blueColor];
+    priceLabel.text = @"Price";
+    priceLabel.textColor = [UIColor whiteColor];
+    priceLabel.textAlignment = NSTextAlignmentCenter;
+    [_lowerPanelView addSubview:priceLabel];
+    
+    _totalLabel = [[UILabel alloc] initWithFrame:CGRectMake(priceLabel.frame.origin.x + priceLabel.frame.size.width, 0, _lowerPanelView.frame.size.width - (priceLabel.frame.origin.x + priceLabel.frame.size.width), _lowerPanelView.frame.size.height / 2)];
+    //totalLabel.backgroundColor = [UIColor lightGrayColor];
+    _totalLabel.text = [NSString stringWithFormat:@"Total Price\nP %li",(long)_totalPrice];
+    _totalLabel.numberOfLines = 0;
+    _totalLabel.textColor = [UIColor whiteColor];
+    _totalLabel.textAlignment = NSTextAlignmentCenter;
+    [_lowerPanelView addSubview:_totalLabel];
+    
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    cancelButton.frame = CGRectMake(_totalLabel.frame.origin.x + 10, _totalLabel.frame.size.height, _totalLabel.frame.size.width - 20, _totalLabel.frame.size.height / 2);
+    cancelButton.backgroundColor = [UIColor yellowColor];
+    cancelButton.layer.cornerRadius = 5;
+    [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    [_lowerPanelView addSubview:cancelButton];
+    
+    [cancelButton addTarget:self action:@selector(cancelEvent) forControlEvents:UIControlEventTouchUpInside];
+    
+    _orderLogsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, quantityLabel.frame.size.height, _lowerPanelView.frame.size.width - _totalLabel.frame.size.width, _lowerPanelView.frame.size.height - quantityLabel.frame.size.height - 5)];
+    _orderLogsScrollView.delegate = self;
+    //_orderLogsScrollView.layer.cornerRadius = _cameraContainerView.layer.cornerRadius;
+    _orderLogsScrollView.contentSize = CGSizeMake(_orderLogsScrollView.frame.size.width, _orderLogsScrollView.frame.size.height);
+    //_orderLogsScrollView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    [_lowerPanelView addSubview:_orderLogsScrollView];
+    
+    for (int i = 0; i < _orderLogsMutableArray.count; i++) {
+        
+        [self orderLogs:[NSString stringWithFormat:@"%@",[_orderLogsMutableArray objectAtIndex:i]] row:i];
+    }
+}
 
 - (void)startStopReading{
     NSLog(@"start/stop");
@@ -242,8 +273,6 @@
             
             [_scanningStatusLabel performSelectorOnMainThread:@selector(setText:) withObject:@"Processing QR code..." waitUntilDone:NO];
             
-            //[_scanningStatusLabel performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
-            
             NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             
@@ -262,9 +291,9 @@
                 [self performSelectorOnMainThread:@selector(failedVerify:) withObject:qrCodeDataArray waitUntilDone:NO];
             }
             
-            [_dataLogsMutableArray addObject:[[qrCodeDataArray valueForKey:@"description"] componentsJoinedByString:@"|"] ];
+            [_orderLogsMutableArray addObject:[[qrCodeDataArray valueForKey:@"description"] componentsJoinedByString:@"|"] ];
             
-            //NSLog(@"all data logs : %@",_dataLogsMutableArray);
+            //NSLog(@"all data logs : %@",_orderLogsMutableArray);
             
             [self performSelectorOnMainThread:@selector(pauseReading) withObject:nil waitUntilDone:NO];
         }
@@ -324,7 +353,9 @@
                              _successFlashView.hidden = YES;
                              _successFlashView.backgroundColor = [_successFlashView.backgroundColor colorWithAlphaComponent:0.5];
                              
-                             [self scanningLogs:[[qrCodeData valueForKey:@"description"] componentsJoinedByString:@"|"] row:(int)_dataLogsMutableArray.count - 1];
+                             [self transaction:@"101124427073" targetAccount:@"101035020184" amount:[NSString stringWithFormat:@"%ld",(long)_totalPrice]];
+                             
+                             //[self scanningLogs:[[qrCodeData valueForKey:@"description"] componentsJoinedByString:@"|"] row:(int)_orderLogsMutableArray.count - 1];
                          }
                      }];
 }
@@ -347,25 +378,25 @@
                              _failedFlashView.hidden = YES;
                              _failedFlashView.backgroundColor = [_failedFlashView.backgroundColor colorWithAlphaComponent:0.5];
                              
-                             [self scanningLogs:[[qrCodeData valueForKey:@"description"] componentsJoinedByString:@"|"] row:(int)_dataLogsMutableArray.count - 1];
+                             //[self scanningLogs:[[qrCodeData valueForKey:@"description"] componentsJoinedByString:@"|"] row:(int)_orderLogsMutableArray.count - 1];
                          }
                      }];
 }
 
--(void)scanningLogs:(NSString*)param row:(int)row{
+-(void)orderLogs:(NSString*)param row:(int)row{
     
-    NSLog(@"scanning log param = %@", param);
+    NSLog(@"order log param = %@", param);
     
-    _dataLogsScrollView.contentSize = CGSizeMake(_dataLogsScrollView.frame.size.width, 15 * (row + 1));
+    _orderLogsScrollView.contentSize = CGSizeMake(_orderLogsScrollView.frame.size.width, 15 * (row + 1));
     
-    if(_dataLogsScrollView.contentSize.height > _dataLogsScrollView.frame.size.height){
+    if(_orderLogsScrollView.contentSize.height > _orderLogsScrollView.frame.size.height){
         
-        CGPoint scrollDownPoint = CGPointMake(0, _dataLogsScrollView.contentSize.height - _dataLogsScrollView.bounds.size.height);
+        CGPoint scrollDownPoint = CGPointMake(0, _orderLogsScrollView.contentSize.height - _orderLogsScrollView.bounds.size.height);
         
-        [_dataLogsScrollView setContentOffset:scrollDownPoint animated:YES];
+        [_orderLogsScrollView setContentOffset:scrollDownPoint animated:YES];
     }
-
-    UILabel *logLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, row * 15, _dataLogsScrollView.frame.size.width, 15)];
+    
+    UILabel *logLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, row * 15, _orderLogsScrollView.frame.size.width, 15)];
     //logLabel.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.3];
     logLabel.textColor = [UIColor whiteColor];
     logLabel.font = [UIFont systemFontOfSize:10];
@@ -379,7 +410,102 @@
      logLabel.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
      }
      */
-    [_dataLogsScrollView addSubview:logLabel];
+    [_orderLogsScrollView addSubview:logLabel];
+}
+
+-(int)getRandomNumberBetween:(int)from to:(int)to {
+    
+    return (int)from + arc4random() % (to-from+1);
+}
+
+-(void)transaction:(NSString*)sourceAccount targetAccount:(NSString*)targetAccount amount:(NSString*)amount{
+    
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        
+        NSDictionary *headers = @{ @"accept": @"application/json",
+                                   @"content-type": @"application/json",
+                                   @"x-ibm-client-id": @"7c695a6c-43e0-409d-ad4e-3f73633db3e2",
+                                   @"x-ibm-client-secret": @"rH2rN7sX4yW1eA0rX6mX5wY2gM6gY5tI8iR3lP0jU3vE4bW8aE",
+                                   @"cache-control": @"no-cache",
+                                   @"postman-token": @"4fba81bb-c709-5a33-e24d-2ee36f2a706c" };
+        
+        NSString *transactionId = [NSString stringWithFormat:@"%d", [self getRandomNumberBetween:100000 to:999999]];
+        
+        NSDictionary *parameters = @{ @"channel_id": @"BLUEMIX",
+                                      @"transaction_id": transactionId,
+                                      @"source_account": sourceAccount,
+                                      @"source_currency": @"php",
+                                      @"target_account": targetAccount,
+                                      @"target_currency": @"php",
+                                      @"amount": amount };
+        
+        NSLog(@"parameters : %@",parameters);
+        
+        NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.us.apiconnect.ibmcloud.com/ubpapi-dev/sb/api/RESTs/transfer"]
+                                                               cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                           timeoutInterval:10.0];
+        
+        
+        [request setHTTPMethod:@"POST"];
+        [request setAllHTTPHeaderFields:headers];
+        [request setHTTPBody:postData];
+        
+        __block NSString *message = @"";
+        
+        NSURLSession *session = [NSURLSession sharedSession];
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                        
+                                                        dispatch_async(dispatch_get_main_queue(), ^(void){
+                                                            if (error) {
+                                                                NSLog(@"%@", error);
+                                                                
+                                                                message = @"Transaction failed.";
+                                                                
+                                                            } else {
+                                                                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                                NSLog(@"%@", httpResponse);
+                                                                
+                                                                _orderNo = [self getRandomNumberBetween:1000 to:9999];
+                                                                
+                                                                message = [NSString stringWithFormat:@"Transaction complete.\nYour order No.%li",(long)_orderNo];
+                                                            }
+                                                            
+                                                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notice" message:message delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                                                            [alert show];
+                                                        });
+                                                    }];
+        [dataTask resume];
+        
+    });
+}
+
+-(void)cancelEvent{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    NSLog(@"alertview");
+    
+    if(buttonIndex == 0){
+        
+        UIView *orderNumberView = [[UIView alloc] initWithFrame:_videoPreviewLayer.frame];
+        orderNumberView.backgroundColor = [UIColor whiteColor];
+        [_cameraContainerView addSubview:orderNumberView];
+        
+        UILabel *orderNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 40, orderNumberView.frame.size.width - 80, orderNumberView.frame.size.height - 80)];
+        //orderNumberLabel.backgroundColor = [UIColor greenColor];
+        orderNumberLabel.text = [NSString stringWithFormat:@"Your order\nNo.%ld",(long)_orderNo];
+        orderNumberLabel.font = [UIFont boldSystemFontOfSize:50];
+        orderNumberLabel.numberOfLines = 0;
+        orderNumberLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        orderNumberLabel.textAlignment = NSTextAlignmentCenter;
+        [orderNumberView addSubview:orderNumberLabel];
+    }
 }
 
 @end

@@ -1,16 +1,14 @@
 //
-//  ScannerViewController.h
+//  OrderNoViewController.h
 //  spendimatic
 //
-//  Created by LF-Mac-Air on 26/11/16.
+//  Created by LF-Mac-Air on 27/11/16.
 //  Copyright © 2016 LF-Mac-Air. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
-#import <Foundation/Foundation.h>
 
-@interface ScannerViewController : UIViewController
+@interface OrderNoViewController : UIViewController
 
 @property (nonatomic, strong) NSMutableArray *orderLogsMutableArray;
 @property (nonatomic) NSInteger totalPrice;
